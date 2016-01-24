@@ -4,14 +4,14 @@ template<typename valueType, int stackSize>
 void FifoStack<valueType, stackSize>::update (valueType value)
 {
 
-  this->stack[this->currentIndex] = value;
+  stack[this->currentIndex] = value;
 
-  this->currentIndex++;
+  currentIndex++;
 
-  if (this->currentIndex == stackSize)
+  if (currentIndex == stackSize)
     {
 
-      this->currentIndex = 0;
+      currentIndex = 0;
     }
 }
 
@@ -24,12 +24,12 @@ valueType FifoStack<valueType, stackSize>::getAverage ()
   valueType min;
   valueType max;
 
-  int size = (sizeof this->stack / sizeof this->stack[0]);
+  int size = (sizeof stack / sizeof stack[0]);
 
   for (int i = 0; i < size; i++)
     {
 
-      valueType tmpVal = this->stack[i];
+      valueType tmpVal = stack[i];
 
       if (min > tmpVal)
         {
